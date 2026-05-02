@@ -234,10 +234,10 @@
 </main>
 
 <script>
-    /* Absolute Paths with forward slashes for browser compatibility */
+    /* Updated Paths with your local Desktop images */
     const images = {
-        ansys: "file:///C:/Users/SRIJA PANDA/Desktop/meshed.png", 
-        cad: "file:///C:/Users/SRIJA PANDA/Desktop/Fusion.png"
+        ansys: "file:///C:/Users/SRIJA PANDA/Desktop/CFd-AIforbharat.png", 
+        cad: "file:///C:/Users/SRIJA PANDA/Desktop/CAD-Aiforbharat.png"
     };
 
     const consoleBox = document.getElementById('console');
@@ -281,6 +281,7 @@
                     </div>
                 `;
                 
+                // Automatically switch to ANSYS view upon discovery
                 showLayer('ansys');
                 progressBar.style.width = '100%';
                 log(`RECURSIVE_LOOP: Discovery cycle complete.`);
@@ -296,13 +297,13 @@
             title.innerText = "ANSYS Fluent: Physics Validation";
             label.innerText = "MESH_DYNAMICS_ANALYSIS";
             label.style.color = "var(--neon-green)";
-            visualWindow.innerHTML = `<img src="${images.ansys}" class="img-placeholder" onerror="this.src='https://via.placeholder.com/600x400/000/39ff14?text=ANSYS+MESH+NOT+FOUND+ON+DESKTOP'" alt="Ansys Mesh Result">`;
+            visualWindow.innerHTML = `<img src="${images.ansys}" class="img-placeholder" onerror="this.src='https://via.placeholder.com/600x400/000/39ff14?text=ANSYS+IMAGE+NOT+FOUND+ON+DESKTOP'" alt="Ansys Mesh Result">`;
             log("GUI: Rendering ANSYS Fluent mesh overlay...");
         } else {
             title.innerText = "Fusion 360: Structural Layer";
             label.innerText = "REACTOR_CAD_MODEL";
             label.style.color = "var(--neon-purple)";
-            visualWindow.innerHTML = `<img src="${images.cad}" class="img-placeholder" onerror="this.src='https://via.placeholder.com/600x400/000/bc13fe?text=FUSION+FILE+NOT+FOUND+ON+DESKTOP'" alt="Fusion 360 Model">`;
+            visualWindow.innerHTML = `<img src="${images.cad}" class="img-placeholder" onerror="this.src='https://via.placeholder.com/600x400/000/bc13fe?text=CAD+IMAGE+NOT+FOUND+ON+DESKTOP'" alt="Fusion 360 Model">`;
             log("GUI: Accessing Fusion 360 structural assets...");
         }
     }
